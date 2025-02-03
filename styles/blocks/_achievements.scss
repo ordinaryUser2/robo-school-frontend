@@ -1,0 +1,38 @@
+@use '../helpers' as *;
+
+.achievements {
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: fluid(40, 30);
+		justify-items: start;
+		align-items: start;
+
+		@include laptop {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@include tablet {
+			grid-template-columns: repeat(2, 1fr);
+			justify-items: center;
+			text-align: center;
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__title {
+		font-size: fluid(70, 60);
+		font-weight: 600;
+		text-wrap: nowrap;
+		color: var(--color-red);
+	}
+
+	&__description {
+		@include mobile {
+			padding-inline: rem(25);
+		}
+	}
+}

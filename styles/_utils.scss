@@ -1,0 +1,98 @@
+@use './helpers' as *;
+
+.container {
+	max-width: calc(var(--container-padding-x) + var(--container-width) * 2);
+	margin-inline: auto;
+	padding-inline: var(--container-padding-x);
+}
+
+.visually-hidden {
+	@include visually-hidden;
+}
+
+.hidden-mobile {
+	@include mobile {
+		display: none !important;
+	}
+}
+
+.visible-mobile {
+	@include mobile-above {
+		display: none !important;
+	}
+}
+
+.logo {
+	position: relative;
+	font-size: fluid(30, 18);
+	font-weight: 700;
+
+	&::after {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 1px;
+		bottom: 0;
+		left: 0;
+		background-color: var(--color-light);
+		transform: scaleX(0);
+	}
+
+	@include hover {
+		&::after {
+			transform: scaleX(1);
+			transition-duration: var(--transition-duration);
+		}
+	}
+}
+
+.phone-number {
+	position: relative;
+	font-size: fluid(30, 16);
+	font-weight: 600;
+
+	&::after {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 1px;
+		bottom: 0;
+		left: 0;
+		background-color: var(--color-light);
+		transform: scaleX(0);
+	}
+
+	@include hover {
+		&::after {
+			transform: scaleX(1);
+			transition-duration: var(--transition-duration);
+		}
+	}
+}
+
+.red-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: rem(260);
+	height: rem(80);
+	font-size: rem(18);
+	background-color: var(--color-red);
+	border: var(--border);
+	border-radius: var(--border-radius);
+
+	@include hover {
+		background-color: var(--color-violet);
+		opacity: 1;
+	}
+
+	@include laptop {
+		font-size: rem(16);
+	}
+}
+
+.disabled-link {
+	color: var(--color-dim) !important;
+	user-select: none;
+	pointer-events: none;
+}

@@ -1,0 +1,85 @@
+@use 'helpers' as *;
+
+html {
+	&.is-lock {
+		overflow: hidden;
+	}
+}
+
+body {
+	@include fluid-text(18, 16);
+
+	display: flex;
+	flex-direction: column;
+	font-family: var(--font-family);
+	color: var(--color-blue-light);
+	text-wrap: balance;
+	overflow-x: hidden;
+	font-weight: 400;
+}
+
+main {
+	flex-grow: 1;
+}
+
+h1, .h1 {
+	@include fluid-text(70, 30);
+
+	color: var(--color-light);
+}
+
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5 {
+	color: var(--color-blue);
+}
+
+h2, .h2 {
+	@include fluid-text(50, 30);
+	@include mobile {
+		line-height: 1.4;
+	}
+}
+
+h3, .h3 {
+	@include fluid-text(36, 30);
+
+	color: var(--color-light);
+	line-height: 1.3;
+
+	@include mobile {
+		line-height: 1.4;
+	}
+}
+
+h4, .h4 {
+	font-size: rem(30);
+}
+
+h5, .h5 {
+	@include fluid-text(24, 20);
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+	transition-duration: var(--transition-duration);
+}
+
+a {
+	color: var(--color-light);
+
+	@include hover {
+		color: var(--color-smoke);
+	}
+
+	&[class] {
+		text-decoration: none;
+	}
+}
+

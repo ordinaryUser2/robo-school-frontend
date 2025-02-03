@@ -1,0 +1,78 @@
+@use '../helpers' as *;
+
+.card__price {
+	&-list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: fluid(40, 30);
+
+		@include laptop {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include tablet {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&-item {
+		--border-radius: #{rem(20)};
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: fluid(360, 300);
+		height: fluid(460, 394);
+		border: 1px solid var(--color-dim);
+		border-radius: var(--border-radius);
+		transform: scaleY(1);
+
+		&.is-active {
+			background-color: var(--color-blue);
+			cursor: default;
+			transition-duration: var(--transition-duration);
+			transform: scaleY(1.09);
+
+			& h3:where([class]), p {
+				color: var(--color-light);
+			}
+		}
+
+		@include mobile-above {
+			@include hover {
+				background-color: var(--color-violet);
+				cursor: default;
+				transition-duration: var(--transition-duration);
+				transform: scaleY(1.09);
+	
+				& h3:where([class]), p {
+					color: var(--color-light);
+				}
+			}
+		}
+	}
+
+	&-title {
+		padding-bottom: fluid(63, 40);
+	}
+
+	&-cost {
+		padding-bottom: rem(20);
+		color: var(--color-blue);
+		font-size: rem(50);
+		font-weight: 600;
+	}
+
+	&-description {
+		text-align: center;
+		color: var(--color-blue);
+		padding-bottom: fluid(61, 40);
+	}
+
+	&-link {
+		@include hover {
+			background-color: var(--color-blue);
+		}
+	}
+}

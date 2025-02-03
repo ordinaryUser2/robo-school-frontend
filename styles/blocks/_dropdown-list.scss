@@ -1,0 +1,74 @@
+@use '../helpers' as *;
+
+.dropdown {
+	position: relative;
+	display: flex;
+	justify-content: center;
+
+	&__initiator {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: rem(230);
+		height: rem(46);
+		background-color: var(--color-red);
+
+		@include hover {
+			& .dropdown__list {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		&-link {
+			position: relative;
+			display: flex;
+			color: var(--color-light);
+			background-color: var(--color-red);
+
+			&::after {
+				@include square(rem(5));
+				position: absolute;
+				content: '';
+				top: 48%;
+				left: 100%;
+				translate: 100% 0%;
+				background: url(../../icons/arrow-down.svg) center/contain no-repeat;
+				pointer-events: none;
+			}
+		}
+	}
+
+	&__list {
+    position: absolute;
+    display: none;
+		top: 100%;
+    z-index: 1;
+
+		&-item {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-top: 1px solid var(--color-light);
+			width: rem(230);
+			height: rem(46);
+			background-color: var(--color-red);
+		}
+
+		&-link {
+			color: var(--color-light);
+			background-color: var(--color-red);
+			transition-duration: var(--transition-duration);
+		}
+	}
+
+	&__list.is-active {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}

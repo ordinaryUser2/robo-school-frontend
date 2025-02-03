@@ -1,0 +1,53 @@
+@use '../helpers' as *;
+
+.container {
+	max-width: calc(var(--container-width) + var(--container-padding-x) * 2);
+
+	&--header {
+		padding-block: fluid(30, 17);
+		padding-inline: fluid(100, 10);
+	}
+
+	&--hero {
+		padding-left: fluid(380, 10);
+		padding-right: fluid(213, 10);
+	}
+
+	&--perfomance {
+		padding-block: fluid(120, 60);
+		padding-inline: fluid(380, 10);
+	}
+
+	&--benefit {
+		padding-block: fluid(100, 40);
+		padding-inline: fluid(380, 10);
+	}
+
+	&--coaches {
+		padding-block: fluid(120, 60);
+		padding-left: fluid(380, 10);
+		padding-right: 1px;
+	}
+
+	&--price {
+		padding-top: 0;
+		padding-inline: fluid(380, 10);
+	}
+
+	&--footer {
+		&-main {
+			padding-block: fluid(87, 40);
+			padding-inline: fluid(440, 10);
+		}
+		
+		&-extra {
+			padding-block: rem(40);
+			padding-inline: rem(100);
+
+			@include mobile {
+				padding-bottom: rem(20);
+				padding-inline: rem(92);
+			}
+		}
+	}
+}

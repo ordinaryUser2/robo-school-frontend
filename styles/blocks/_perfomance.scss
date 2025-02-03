@@ -1,0 +1,17 @@
+@use '../helpers' as *;
+
+.perfomance__body {
+	display: flex;
+	flex-direction: column;
+	row-gap: fluid(60, 40);
+
+	&-description {
+		width: fluid(891, 470);
+		font-size: fluid(30, 20);
+		color: var(--color-blue);
+
+		@include mobile {
+			width: 100%;
+		}
+	}
+}

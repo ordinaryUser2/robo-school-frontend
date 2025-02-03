@@ -1,0 +1,24 @@
+@use '../helpers' as *;
+
+.slider {
+	display: flex;
+	justify-content: center;
+	column-gap: rem(5);
+	padding-top: rem(10);
+
+	@include mobile {
+		display: none;
+	}
+
+	&__button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: transparent;
+		border: none;
+
+		@include hover {
+			color: var(--color-blue-light);
+		}
+	}
+}

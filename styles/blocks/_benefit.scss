@@ -1,0 +1,60 @@
+@use '../helpers' as *;
+
+.benefit {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: fluid(60, 40);
+
+		@include mobile {
+			text-align: center;
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem(40);
+
+		@include tablet {
+			grid-template-columns: repeat(2, 1fr);
+			gap: rem(30);
+		}
+
+		@include mobile {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		row-gap: rem(20);
+
+		@include mobile {
+			align-items: center;
+			row-gap: rem(10);
+		}
+	}
+
+	&__title {
+		&--pop-up {
+			position: relative;
+
+			@include mobile {
+				text-align: center;
+			}
+
+			&::after {
+				@include square(rem(24));
+
+				position: absolute;
+				content: '';
+				top: -14%;
+				right: -35%;
+				background: url('../../icons/pop-up-disclaimer.svg') center/contain no-repeat;
+			}
+		}
+	}
+}

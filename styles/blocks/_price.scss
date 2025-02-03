@@ -1,0 +1,26 @@
+@use '../helpers' as *;
+
+.price {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		padding-bottom: fluid(140, 60);
+
+		@include mobile {
+			align-items: center;
+		}
+	}
+
+	&__title {
+		padding-bottom: fluid(80, 40);
+
+		@include mobile {
+			text-align: center;
+		}
+	}
+
+	&__body {
+		align-self: center;
+	}
+}

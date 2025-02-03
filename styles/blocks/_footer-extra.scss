@@ -1,0 +1,38 @@
+@use '../helpers' as *;
+
+.footer {
+	&__extra {
+		&-body {
+			display: flex;
+			justify-content: space-between;
+			align-items: start;
+
+			@include mobile {
+				flex-direction: column;
+				align-items: center;
+				row-gap: rem(20);
+			}
+		}
+
+		&-logo {
+			display: flex;
+			flex-direction: column;
+			row-gap: rem(5);
+
+			@include mobile {
+				display: contents;
+			}
+		}
+
+		&-copyright {
+			font-size: rem(16);
+			color: var(--color-light-opacity);
+
+			@include mobile {
+				padding-top: rem(20);
+				font-size: rem(14);
+				order: 5;
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+@use '../helpers/' as *;
+
+.pop-up__disclaimer {
+	position: relative;
+	cursor: pointer;
+
+	&.is-active {
+		&::after {
+			opacity: 1;
+		}
+	}
+
+	&::after {
+		position: absolute;
+		content: 'При наличии свободных мест';
+    width: rem(256);
+    height: rem(56);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: rem(16);
+		color: var(--color-blue);
+    top: -100%;
+    left: 100%;
+    translate: 3% -80%;
+    background-color: white;
+		border-radius: var(--border-radius);
+		opacity: 0;
+		transition: opacity var(--transition-duration);
+
+		@include mobile {
+			width: rem(224);
+			height: rem(52);
+			top: -85%;
+			left: -70%;
+			font-size: rem(14);
+		}
+	}
+}

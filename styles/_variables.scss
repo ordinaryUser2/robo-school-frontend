@@ -1,0 +1,27 @@
+@use './helpers' as *;
+
+:root {
+	--color-light: #FFFFFF;
+	--color-light-opacity: #FFFFFFB3;
+	--color-smoke: #F9F9F9;
+	--color-snow: #F6F6F6;
+	
+	--color-blue: #141024;
+	--color-blue-light: #141024B3;
+	--color-gray: #282944B3;
+	--color-gray-light: #14102414;
+	--color-dim: #14102433;
+	
+	--color-violet: #230B34;
+	--color-red: #D52027;
+
+	--bodrer: 1px solid var(--color-red);
+	--border-radius: #{rem(5)};
+
+	--font-family: 'Jost', 'sans-serif';
+
+	--container-width: #{rem(1200)};
+	--container-padding-x: #{rem(380)};
+
+	--transition-duration: 0.2s;
+}

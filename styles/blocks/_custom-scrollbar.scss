@@ -1,0 +1,25 @@
+@use '../helpers' as *;
+
+::-webkit-scrollbar {
+	width: rem(15);
+	height: rem(10);
+
+	@include mobile {
+		width: rem(5);
+		height: rem(3);
+	}
+}
+
+::-webkit-scrollbar-track {
+	background: var(--color-gray-light);
+	border-radius: rem(40);
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--color-blue);
+	border-radius: rem(40);
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: var(--color-blue-light);
+}

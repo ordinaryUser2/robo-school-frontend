@@ -1,0 +1,93 @@
+@use '../helpers' as *;
+
+.hero {
+	&__wrapper {
+		display: flex;
+		column-gap: rem(28);
+
+		@include mobile {
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	&__body {
+		width: rem(540);
+		padding-top: fluid(236, 50);
+		padding-bottom: fluid(410,85);
+
+		@include mobile {
+			display: contents;
+		}
+
+		&-title {
+			text-wrap: nowrap;
+			
+			&:not(:last-child) {
+				padding-bottom: rem(20);
+			}
+
+			@include laptop {
+				&:not(:last-child) {
+					padding-bottom: rem(10);
+				}
+			}
+
+			@include mobile {
+				padding-top: rem(38);
+				order: -3;
+			}
+		}
+
+		&-description {
+			padding-bottom: rem(50);
+			color: var(--color-light);
+			font-size: fluid(20, 16);
+
+			@include laptop {
+				padding-bottom: rem(20);
+			}
+
+			@include mobile {
+				text-align: center;
+				order: -2;
+			}
+		}
+
+		&-action {
+			padding-bottom: rem(40);
+		}
+
+		&-link {
+			@include tablet {
+				width: rem(190);
+				height: rem(65);
+			}
+
+			@include mobile {
+				width: rem(300);
+				height: rem(60);
+			}
+		}
+	}
+
+	&__image {
+		display: flex;
+		align-items: end;
+		padding-inline: 0;
+
+		@include mobile {
+			display: flex;
+			order: -1;
+		}
+
+		&-bg {
+			width: fluid(783, 273);
+			height: auto;
+
+			@include mobile {
+				margin-bottom: rem(-60);
+			}
+		}
+	}
+}

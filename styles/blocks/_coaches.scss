@@ -1,0 +1,22 @@
+@use '../helpers' as *;
+
+.coaches {
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		row-gap: fluid(60, 40);
+		align-items: start;
+	}
+
+	&__header {
+		@include mobile {
+			text-align: center;
+		}
+	}
+
+	&__body {
+		width: 100%;
+		overflow-x: scroll;
+		scroll-snap-type: x mandatory;
+	}
+}

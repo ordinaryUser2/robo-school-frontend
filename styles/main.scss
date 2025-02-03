@@ -1,0 +1,27 @@
+@use './normalize';
+@use './fonts';
+@use './variables';
+@use './utils';
+@use './globals';
+
+@use './blocks/containers';
+@use './blocks/header';
+@use './blocks/buttons-header';
+@use './blocks/overlay-menu';
+@use './blocks/sections';
+@use './blocks/custom-scrollbar';
+@use './blocks/hero';
+@use './blocks/perfomance';
+@use './blocks/achievements';
+@use './blocks/benefit';
+@use './blocks/pop-up-disclaimer';
+@use './blocks/coaches';
+@use './blocks/card-coaches';
+@use './blocks/sliders';
+@use './blocks/modal';
+@use './blocks/dropdown-list';
+@use './blocks/price';
+@use './blocks/card-price';
+@use './blocks/footer-main';
+@use './blocks/footer-form';
+@use './blocks/footer-extra';

@@ -1,0 +1,92 @@
+@use '../helpers/' as *;
+
+.button {
+	&-group {
+		display: flex;
+		column-gap: rem(10);
+	}
+
+	&-header {
+		--bgColor: var(--color-blue);
+		--borderGradient: linear-gradient(
+			to bottom, rgba(255, 255, 255), rgba(255, 255, 255, 0)
+		);
+
+		@include square(rem(44));
+		--border-radius: #{rem(10)};
+		
+		position: relative;
+		display: flex;
+		background: 
+			linear-gradient(
+				var(--bgColor),
+				var(--bgColor)
+			) padding-box,
+			var(--borderGradient) border-box;
+		border: 1px solid transparent;
+		border-radius: var(--border-radius);
+		user-select: none;
+	}
+
+	&-phone {
+		user-select: none;
+		
+		&::after {
+			@include square(rem(20));
+			@include abs-center;
+
+			content: '';
+			background: url(../../icons/phone.svg) center/contain no-repeat;
+		}
+	}
+
+	&-burger {
+		z-index: 10;
+
+		&-line {
+			--border-radius: #{rem(10)};
+
+			@include abs-center;
+
+			position: absolute;
+			width: rem(26);
+			height: rem(2);
+			background-color: var(--color-light);
+			border-radius: var(--border-radius);
+			transition: all 0.3s ease;
+
+
+			&:first-child {
+				top: rem(15);
+			}
+
+			&:last-child {
+				width: rem(13);
+				top: auto;
+				left: 0;
+				translate: 63% -50%;
+				bottom: rem(13);
+			}
+		}
+	}
+}
+
+.is-active {
+	& .button-burger-line:first-child {
+		@include abs-center;
+
+		width: rem(18);
+		transform: rotate(45deg);
+	}
+
+	& .button-burger-line {
+		@include abs-center;
+		
+		width: rem(18);
+		transform: rotate(-45deg);
+	}
+
+	& .button-burger-line:last-child {
+		transform: scale(0);
+	}
+}
