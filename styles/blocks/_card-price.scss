@@ -41,7 +41,7 @@
 
 		@include mobile-above {
 			@include hover {
-				background-color: var(--color-violet);
+				background-color: var(--color-blue);
 				cursor: default;
 				transition-duration: var(--transition-duration);
 				transform: scaleY(1.09);
@@ -71,8 +71,6 @@
 	}
 
 	&-link {
-		@include hover {
-			background-color: var(--color-blue);
-		}
+		--border-radius: #{rem(5)};
 	}
 }

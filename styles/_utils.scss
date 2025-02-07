@@ -77,13 +77,15 @@
 	width: rem(260);
 	height: rem(80);
 	font-size: rem(18);
+	font-weight: 600;
 	background-color: var(--color-red);
-	border: var(--border);
+	border: var(--bodrer);
 	border-radius: var(--border-radius);
 
 	@include hover {
-		background-color: var(--color-violet);
-		opacity: 1;
+		color: var(--color-red);
+		background-color: var(--color-light);
+		border-color: var(--color-red);
 	}
 
 	@include laptop {

@@ -17,7 +17,7 @@ class Slider {
 			return;
 		}
 
-		this.scrollAmount = 80;
+		this.scrollAmount = 320;
 		this.bindEvents();
 	}
 

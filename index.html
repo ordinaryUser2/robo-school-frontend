@@ -806,7 +806,7 @@
 						</div>
 					</div>
 					<div class="footer__main-body">
-						<form class="footer__form">
+						<form class="footer__form" data-js-footer-form>
 							<fieldset class="footer__form-fieldset">
 								<legend class="visually-hidden">Оформить заявку на прохождение курса</legend>
 								<label class="visually-hidden" for="name">Введите ваше имя:</label>
@@ -820,12 +820,13 @@
 								>
 								<label class="visually-hidden" for="tel">Введите номер телефона:</label>
 								<input
-									class="footer__form-input footer__form-elements"
+									class="footer__form-input footer__form-elements footer__form-element-tel"
 									id="tel"
 									name="tel"
 									type="tel"
 									placeholder="Телефон"
 									autocomplete="tel"
+									data-js-input-element-tel
 								>
 								<label class="visually-hidden" for="email">Введите электронную почту:</label>
 								<input
@@ -842,7 +843,7 @@
 								>
 								<!-- type должен быть submit, но я отпущу это так как форма никуда не 
 									отправляется -->
-									Оформить заявку
+									<span class="footer__form-button-text">Оформить заявку</span>
 								</button>
 							</fieldset>
 						</form>
@@ -867,3 +868,8 @@
 	</footer>
 </body>
 </html>
+
+<!-- 
+			2) Сделать кастомный скроллбар. Зациклить скрол у секции тренеров.
+			3) Доделать hover-эффекты.
+-->
